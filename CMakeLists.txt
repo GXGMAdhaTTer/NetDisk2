@@ -6,7 +6,7 @@ project(NetDisk2 LANGUAGES CXX)
 
 # 指定构建类型
 if (NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
+    set(CMAKE_BUILD_TYPE Debug)
 endif()
 
 # 缓存
@@ -19,9 +19,10 @@ endif()
 
 # 主体
 add_executable(myserver)
-aux_source_directory(server sources)
+# aux_source_directory(server sources)
+file(GLOB sources *.cc *.h)
 target_sources(myserver PUBLIC ${sources})
-target_link_libraries(myserver PUBLIC wfrest workflow ssl crypt crypto)
+target_link_libraries(myserver PUBLIC wfrest workflow ssl crypt crypto alibabacloud-oss-cpp-sdk curl pthread)
 target_compile_definitions(myserver PUBLIC MY_NAME="gcc")
 
 message("PROJECT_NAME: ${PROJECT_NAME}")
