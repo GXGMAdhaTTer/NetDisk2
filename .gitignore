@@ -30,3 +30,15 @@
 *.exe
 *.out
 *.app
+
+# 下载文件
+tmp
+
+# build
+build
+
+# OSS
+OSS.h
+
+# .vscode
+.vscode

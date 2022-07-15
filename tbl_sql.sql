@@ -57,3 +57,5 @@ CREATE TABLE `tbl_user_file` (
   KEY `idx_status` (`status`),
   KEY `idx_user_id` (`user_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+truncate tbl_file; truncate tbl_user; truncate tbl_user_token; truncate tbl_user_file;
